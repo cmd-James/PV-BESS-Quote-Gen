@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Evaluation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="../static/logo.png" alt="Logo" class="logo">
+        <h1>Plant Analysis</h1>
+        <form  action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">Consumption data/load profile:</label>
+            <input type="file" name="file" id="file" required><br>
+            <label for="plant_name">Plant Name:</label>
+            <input type="text" name="plant_name" id="plant_name" required><br>
+            <label for="battery_hours">Backup Battery Hours:</label>
+            <input type="number" name="battery_hours" id="battery_hours" min="1" required><br>
+            <label for="distance">Distance (km):</label>
+            <input type="number" name="distance" id="distance" min="1" required><br>
+            <label for="location">Location (Site Address):</label>
+            <input type="text" id="location" name="location" required><br>
+            <label for="solar-system-requirement">Solar System Requirement:</label>
+            <select id="solar-system-requirement" name="solar-system-requirement">
+                <option value="hybrid">Hybrid</option>
+                <option value="grid-tied">Grid Tied</option>
+                <option value="off-grid">Off Grid</option>
+            <select>
+            <label for="mounting-requirement">Solar PV Mounting Structures:</label>
+            <select id="mounting-requirement" name="mounting-requirement">
+                <option value="Roof Mount">Roof Mount</option>
+                <option value="Ground Mount">Ground Mount</option>
+                <option value="Carpot System">Carpot System</option>
+                <option value="Tracking System">Tracking System</option>
+                <option value="Combined System">Combined System</option>
+            <select>
+            <label for="busitype">Business Type:</label>
+            <select id="busitype" name="busitype">
+                <option value="Residential">Residential</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Utility">Utility</option>
+            <select>
+            <label for="generator">Generator On Site</label>
+            <select id="generator" name="generator">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            <select>
+            <label for="generatorsize">Generator Size</label>
+            <input type="number" name="generatorsize" id="generatorsize" min="100" required><br>
+            <label for="distmuni">District Municipality:</label>
+            <input type="text" id="distmuni" name="distmuni" required>
+            <label for="upload-picture">Pictures of Transformer(s):</label>
+            <input type="file" id="upload-picture" name="upload-picture" accept="image/*">
+            <br>
+            <label for="upload-picture1">Pictures of Incomer Combiner Panles/Breakers:</label>
+            <input type="file" id="upload-picture1" name="upload-picture1" accept="image/*">
+            <br>
+            <label for="upload-file">Provide Utility Bills:</label>
+            <input type="file" id="upload-file" name="upload-file[]" accept=".pdf,.xls,.xlsx,.csv" multiple>
+            <br>
+            <input type="submit" value="Analyze">
+        </form>
+    </div>
+</body>
+</html>
