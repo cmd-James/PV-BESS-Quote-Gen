@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('../static/solar.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+  
+  height: 600px;
+  overflow-x: auto;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 100%;
+  max-width: 800px;
+  position: relative; /* Make the container position relative */
+  background-size: contain;
+}
+
+.logo {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  width: 100px; /* Adjust as needed */
+  height: auto;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.analysis_result {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
