@@ -5,12 +5,13 @@ from flask import Flask, request, render_template, jsonify, send_file
 import pandas as pd
 import matplotlib.pyplot as plt
 from io import BytesIO
-import PyPDF2
 import base64
 import openpyxl
+import xlsxwriter
 from openpyxl.utils.dataframe import dataframe_to_rows
 import os
-from fpdf import FPDF
+import win32com.client as win32
+import pythoncom
 
 
 app = Flask(__name__)
@@ -422,21 +423,9 @@ class System_Builder(Plant_Eval):
         workbook.close()
         
         # Convert the workbook to PDF
-        pdf_file_path = os.path.join(folder_path, self.plant_eval_name + '.pdf')
-        pdf = FPDF()
-        pdf.add_page()
-        pdf.set_font("Arial", size=12)
-        
-        workbook = openpyxl.load_workbook(excel_file_path)
-        sheet = workbook.active
-        
-        for row in sheet.iter_rows(values_only=True):
-            for cell in row:
-                pdf.cell(200, 10, txt=str(cell), ln=True)
-        
-        pdf.output(pdf_file_path)
-        
-        return pdf_file_path         
+        #pdf_file_path = os.path.join(folder_path, self.plant_eval_name + '.pdf')
+
+        return excel_file_path         
 
     def DC_cable(self):
         panels_per_string = 18
